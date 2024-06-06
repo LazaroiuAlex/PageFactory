@@ -1,0 +1,8 @@
+.classpath
+.project
+.settings/
+bin/
+target/
+pom.xml
+TestNG_parameters.xml
+
