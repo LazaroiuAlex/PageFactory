@@ -23,7 +23,7 @@ public class BaseTest {
 	public WebDriver driver;
 
 	
-	//@Parameters({"url"})
+	@Parameters({"url"})
 	
 	@BeforeClass
 	public void setup(String appURL) {

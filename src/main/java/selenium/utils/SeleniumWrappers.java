@@ -31,5 +31,16 @@ public class SeleniumWrappers extends BaseTest {
 			throw new TestException(e.getMessage());
 		}
 	}
+	
+	public void sendKeys(WebElement element, String textToWrite) {
+		
+		System.out.println("Called method <sendKeys> on element " + element);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.visibilityOf(element));
+		element.clear(); //(resetam field-ul inainte sa dam send keys)
+		element.sendKeys(textToWrite);
+		
+		
+	}
 
 }
