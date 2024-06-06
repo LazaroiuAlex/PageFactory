@@ -1,6 +1,9 @@
 package pages;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 import selenium.utils.SeleniumWrappers;
 
@@ -12,6 +15,15 @@ public class MenuPage extends SeleniumWrappers {
 		
 		//this.driver = driver;
 		super(driver);
+		PageFactory.initElements(driver, this);
 	}
+	
+	/*
+	 * public By myAccountLink = By.linkText("My Account")
+	 * driver.findElement(myAccountLink) sau cum este scris mai jos
+	 */
+	
+	@FindBy(linkText = "My account")
+	public WebElement myAccountLink;
 
 }

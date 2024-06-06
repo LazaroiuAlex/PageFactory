@@ -4,4 +4,5 @@
 bin/
 target/
 TestNG_parameters.xml
-
+login.properties
+test-output/
