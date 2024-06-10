@@ -34,7 +34,7 @@ public class BaseTest {
 		driver.get(appURL);
 	}
 	
-	//@AfterClass
+	@AfterClass
 	public void teardown() throws InterruptedException { //doar for learning purposes
 		Thread.sleep(5000);
 		driver.quit();
