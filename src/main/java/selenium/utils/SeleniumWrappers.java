@@ -65,5 +65,18 @@ public class SeleniumWrappers extends BaseTest{
 		
 	}
 	
-	
+	public String getText(WebElement element) {
+		Log.info("called method <getText() on element: >" + element);
+		try {
+		WebDriverWait wait =  new WebDriverWait(driver, Duration.ofSeconds(10));
+		Log.info("called <waitForVisibilityOfElement()> on element: " + element);
+		wait.until(ExpectedConditions.visibilityOf(element));
+		return element.getText();
+		}catch(Exception e) {
+			Log.error("Exception occured on <sendKeys()> on element: " + element);
+			Log.error(e.getMessage());
+			throw new TestException("unable to <sendKeys()> on element: " +element);
+	}
+			
+}
 }

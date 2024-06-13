@@ -18,17 +18,19 @@ import org.testng.annotations.Parameters;
 
 import com.google.common.io.Files;
 
-public class BaseTest {
+public class BaseTest extends Driver {
 	
 	public WebDriver driver;
 
 	
-	@Parameters({"url"})
+	@Parameters({"browser", "url"})
 	
 	@BeforeClass
-	public void setup(String appURL) {
+	public void setup(String browser, String appURL) {
 		
-		driver = new ChromeDriver();
+		//driver = new ChromeDriver();
+		
+		driver = initDriver(browser);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.get(appURL);
